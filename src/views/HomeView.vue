@@ -198,14 +198,14 @@ export default {
 /* ========== スマホ調整 ========== */
 @media (max-width: 767px) {
   .arrow-btn {
-    width: 36px;          /* ← 少し小さく */
-    height: 36px;
+    width: 38px;          /* ← 少し小さく */
+    height: 38px;
     box-shadow: 0 3px 10px rgba(0,0,0,0.1);
     background: rgba(255,255,255,0.85);
   }
   .arrow-btn svg {
-    width: 20px;          /* ← アイコンも小さく */
-    height: 20px;
+    width: 22px;          /* ← アイコンも小さく */
+    height: 22px;
   }
   .arrow-btn.left  { left: 6px; }
   .arrow-btn.right { right: 6px; }
@@ -215,19 +215,5 @@ export default {
 
   /* ヒント非表示（既にOK） */
   .hint--pc { display: none; }
-}
-
-/* ========== さらに小さい端末（〜400px） ========== */
-@media (max-width: 400px) {
-  .arrow-btn {
-    width: 32px;
-    height: 32px;
-  }
-  .arrow-btn svg {
-    width: 16px;
-    height: 16px;
-  }
-  .arrow-btn.left  { left: 6px; }
-  .arrow-btn.right { right: 6px; }
 }
 </style>

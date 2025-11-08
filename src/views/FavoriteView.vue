@@ -175,8 +175,8 @@ export default {
 /* ========== スマホ調整 ========== */
 @media (max-width: 767px) {
   .delete-btn {
-    width: 32px;
-    height: 32px;
+    width: 30px;
+    height: 30px;
     top: 6px;
     right: 6px;
     font-size: 16px;
@@ -188,8 +188,8 @@ export default {
     transform: scale(1.04);
   }
   .delete-btn svg {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
   }
 }
 </style>
