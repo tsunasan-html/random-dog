@@ -117,7 +117,7 @@ export default {
         this.isDone = false
         return
       }
-      // 履歴の末尾なら新規取得
+      
       const url = await this.randomDogImg()
       if (!url) return
       this.images.push(url)
@@ -130,12 +130,11 @@ export default {
       this.isDone = false
     },
 
-    // キーボード操作
     onKey(e) {
       if (e.key === 'ArrowRight') this.next()
       if (e.key === 'ArrowLeft') this.prev()
     },
-    // スワイプ（左→次、右→前）
+   
     onTouchStart(e) {
       this.touchStartX = e.changedTouches[0].clientX
       this.touchDeltaX = 0
@@ -150,13 +149,11 @@ export default {
     },
   },
   async mounted() {
-    // 初期1枚
     const first = await this.randomDogImg()
     if (first) {
       this.images = [first]
       this.index = 0
     }
-    // キーボードイベント
     window.addEventListener('keydown', this.onKey)
   },
   beforeDestroy() {

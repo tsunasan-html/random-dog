@@ -4,7 +4,7 @@
     <header class="site-header">
       <nav class="nav-bar">
         <router-link to="/" class="brand">
-          🐾 Doggo
+          🐾 Doggo App
         </router-link>
         <ul class="nav">
           <li><router-link exact to="/" class="nav-link">Home</router-link></li>
@@ -50,12 +50,12 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100%;
-  background: transparent;     /* ← htmlの背景を見せる */
+  background: transparent;
   color: var(--fg);
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;          /* 横スクロールのはみ出し対策 */
+  overflow-x: hidden;
   background:
     radial-gradient(1200px 600px at 20% -10%, #f0f7ff 0%, transparent 60%) no-repeat,
     linear-gradient(180deg, #ffffff, #f7f9fc);
@@ -68,7 +68,6 @@ body {
 }
 
 /* ========== Header ========== */
-
 .site-header {
   position: sticky;
   top: 12px;
@@ -77,7 +76,6 @@ body {
   display: grid;
   place-items: center;
   padding: 0 12px;
-  /* ノッチ端末の上辺安全領域 */
   padding-top: calc(env(safe-area-inset-top, 0px));
 }
 
@@ -93,18 +91,15 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* 左右の安全領域（iOSノッチ対策） */
   padding-left: calc(14px + env(safe-area-inset-left, 0px));
   padding-right: calc(14px + env(safe-area-inset-right, 0px));
-  touch-action: manipulation;             /* タップ反応を軽く */
+  touch-action: manipulation;
 }
 
-/* クリック波紋のハイライトを消す（モバイルの見た目向上） */
 .nav-link, .brand {
   -webkit-tap-highlight-color: transparent;
 }
 
-/* 左のロゴ/ブランド */
 .brand {
   display: inline-flex;
   align-items: center;
@@ -136,11 +131,11 @@ body {
   font-weight: 700;
   text-decoration: none;
   color: var(--fg);
-  padding: 10px 0;                 /* タッチ領域を縦方向に確保 */
+  padding: 10px 0;
   line-height: 1;
   transition: color .2s ease;
   font-size: clamp(14px, 2.4vw, 16px);
-  min-height: 40px;                /* タップ最小高さの目安 */
+  min-height: 40px;
 }
 
 /* 下線はアクティブのみで表示 */
@@ -169,9 +164,6 @@ body {
   background: var(--brand);
 }
 
-/* =========================================
-   1) スマホ基本（〜767px）
-   ========================================= */
 @media (max-width: 767px) {
   .nav-bar {
     width: 100%;
@@ -202,10 +194,6 @@ body {
   .nav li { scroll-snap-align: center; }
 }
 
-/* =========================================
-   2) さらに狭い端末（〜560px）
-   - 余白・フォント縮小、gap調整
-   ========================================= */
 @media (max-width: 560px) {
   .nav-bar {
     height: calc(var(--nav-h-sp) - 2px);
@@ -224,10 +212,6 @@ body {
   .brand-text { display: none; }  /* 例：ロゴ + 省略テキスト運用 */
 }
 
-/* =========================================
-   3) 極小端末（〜420px）
-   - 高さ/角丸をさらに圧縮、ナビ最後尾を省略可能
-   ========================================= */
 @media (max-width: 420px) {
   .nav-bar { border-radius: 12px; }
   .nav-link { font-size: clamp(12px, 4vw, 13px); }
@@ -236,51 +220,19 @@ body {
   .nav li.nav--optional { display: none; }
 }
 
-/* =========================================
-   4) 超コンパクト（〜360px）
-   - ナビ高さをさらに下げて、上下余白を最小化
-   ========================================= */
-@media (max-width: 360px) {
-  .nav-bar { height: var(--nav-h-xxs); }
-  .nav-link {
-    padding: 4px 0;
-    min-height: 32px;
-  }
-}
-
-/* =========================================
-   5) スマホ横向き（ランドスケープ）時の微調整
-   ========================================= */
 @media (max-width: 767px) and (orientation: landscape) {
   .nav-bar { height: 48px; }
   .nav-link { min-height: 32px; }
 }
 
-/* =========================================
-   6) 省エネ：動きに弱い人向け（アニメ減）
-   ========================================= */
 @media (prefers-reduced-motion: reduce) {
   .nav-link::after { transition: none; }
   .brand, .nav-link { transition: none; }
 }
 
-/* =========================================
-   7) “SPで非表示”にしたい要素用のユーティリティ
-   ========================================= */
-.sp-hidden { display: none !important; }     /* SP 専用で隠したい時に付与 */
-@media (min-width: 768px) {
-  .sp-hidden { display: revert !important; } /* PCで再表示 */
-}
-
-/* 逆に“SPだけ表示”したい場合 */
-.only-sp { display: none !important; }
-@media (max-width: 767px) {
-  .only-sp { display: initial !important; }
-}
-
 /* ========== Main ========== */
 .main {
-  min-height: calc(100vh - 88px);    /* ヘッダー分をざっくり差し引き */
+  min-height: calc(100vh - 88px);
   display: grid;
   place-items: center;
   padding: 18px 12px 40px;
@@ -440,5 +392,4 @@ body {
   font-size: 12px;
   margin: 4px 0 0;
 }
-
 </style>
