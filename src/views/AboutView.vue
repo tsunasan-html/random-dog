@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <h1>このアプリについて</h1>
+    <h1>アプリについて</h1>
     <p>
       このアプリは <strong>Vue.js (Vue CLI)</strong> を使って構築した
       Webアプリです。<br />  
