@@ -38,29 +38,6 @@ export default {}
   --cardGlass: rgba(255,255,255,0.9);
   --ring: rgba(17,24,39,0.08);
   --shadow-lg: 0 20px 40px rgba(16,24,40,0.12);
-}
-
-/* ベース */
-html, body, #app {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  color: var(--fg);
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* 背景（ヘッダーとメインで共有） */
-body {
-  background:
-    radial-gradient(1200px 600px at 20% -10%, #f0f7ff 0%, transparent 60%) no-repeat,
-    linear-gradient(180deg, #ffffff, #f7f9fc);
-}
-
-/* ========== Header ========== */
-/* ================== Base（共通の軽い調整） ================== */
-:root {
   --nav-h: 60px;        /* PCの高さ */
   --nav-h-sp: 56px;     /* 〜767px */
   --nav-h-xxs: 50px;    /* 〜360px */
@@ -68,6 +45,29 @@ body {
   --nav-gap-sp: 16px;
   --nav-gap-xs: 12px;
 }
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background: transparent;     /* ← htmlの背景を見せる */
+  color: var(--fg);
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;          /* 横スクロールのはみ出し対策 */
+  background:
+    radial-gradient(1200px 600px at 20% -10%, #f0f7ff 0%, transparent 60%) no-repeat,
+    linear-gradient(180deg, #ffffff, #f7f9fc);
+}
+
+#app {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ========== Header ========== */
 
 .site-header {
   position: sticky;
@@ -174,6 +174,7 @@ body {
    ========================================= */
 @media (max-width: 767px) {
   .nav-bar {
+    width: 100%;
     height: var(--nav-h-sp);
     border-radius: 14px;
     backdrop-filter: blur(6px);

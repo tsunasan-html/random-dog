@@ -175,7 +175,7 @@ export default {
     padding: 24px
   }
 }
-/* ========== 矢印ボタン（カード内の両端） ========== */
+/* ========== 矢印ボタン（共通） ========== */
 .arrow-btn {
   position: absolute;
   top: 50%;
@@ -198,9 +198,40 @@ export default {
 .arrow-btn.right { right: 16px; }
 .arrow-btn:hover { transform: translateY(-50%) scale(1.08); }
 .arrow-btn:disabled { opacity: .5; cursor: not-allowed; }
+
+/* ========== スマホ調整 ========== */
 @media (max-width: 767px) {
-  .hint--pc {
-    display: none;
+  .arrow-btn {
+    width: 38px;          /* ← 少し小さく */
+    height: 38px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    background: rgba(255,255,255,0.85);
   }
+  .arrow-btn svg {
+    width: 18px;          /* ← アイコンも小さく */
+    height: 18px;
+  }
+  .arrow-btn.left  { left: 6px; }
+  .arrow-btn.right { right: 6px; }
+
+  /* hover効果はスマホでは不要に */
+  .arrow-btn:hover { transform: translateY(-50%) scale(1); }
+
+  /* ヒント非表示（既にOK） */
+  .hint--pc { display: none; }
+}
+
+/* ========== さらに小さい端末（〜400px） ========== */
+@media (max-width: 400px) {
+  .arrow-btn {
+    width: 32px;
+    height: 32px;
+  }
+  .arrow-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+  .arrow-btn.left  { left: 6px; }
+  .arrow-btn.right { right: 6px; }
 }
 </style>
