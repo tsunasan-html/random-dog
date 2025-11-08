@@ -3,12 +3,10 @@
     <h1 class="title">Random Dog</h1>
 
     <div class="card">
-      <!-- 左矢印（履歴がある時だけ表示） -->
       <button
         v-if="canPrev"
         class="arrow-btn left"
         :disabled="isLoading"
-        aria-label="Previous dog"
         @click="prev"
       >
         <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
@@ -32,10 +30,9 @@
           class="heart-btn"
           :class="{ active: isDone }"
           :disabled="isLoading || isDone"
-          aria-label="Add to favorites"
           @click="emitFavorite"
         >
-          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="22" height="22">
             <path
               d="M12.1 21.1c-.3.2-.6.2-.9 0C6.3 17.6 3 14.7 3 10.8 3 8 5.2 6 7.8 6c1.5 0 2.9.7 3.7 1.9C12.3 6.7 13.7 6 15.2 6 17.8 6 20 8 20 10.8c0 3.9-3.3 6.8-7 10.3l-.9.7z"
               stroke="currentColor"
@@ -56,10 +53,9 @@
       <button
         class="arrow-btn right"
         :disabled="isLoading"
-        aria-label="Next dog"
         @click="next"
       >
-        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="22" height="22">
           <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </button>
@@ -202,14 +198,14 @@ export default {
 /* ========== スマホ調整 ========== */
 @media (max-width: 767px) {
   .arrow-btn {
-    width: 38px;          /* ← 少し小さく */
-    height: 38px;
+    width: 36px;          /* ← 少し小さく */
+    height: 36px;
     box-shadow: 0 3px 10px rgba(0,0,0,0.1);
     background: rgba(255,255,255,0.85);
   }
   .arrow-btn svg {
-    width: 18px;          /* ← アイコンも小さく */
-    height: 18px;
+    width: 20px;          /* ← アイコンも小さく */
+    height: 20px;
   }
   .arrow-btn.left  { left: 6px; }
   .arrow-btn.right { right: 6px; }

@@ -159,17 +159,37 @@ export default {
   position: absolute;
   top: 8px;
   right: 8px;
-  background: rgba(0,0,0,0.6);
+  background: rgba(255,255,255,0.9);  /* ← 白ガラス調に統一 */
   border: none;
   border-radius: 50%;
   width: 32px;
   height: 32px;
-  color: #fff;
+   color: #111827;
   font-size: 16px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: background 0.2s ease;
+}
+/* ========== スマホ調整 ========== */
+@media (max-width: 767px) {
+  .delete-btn {
+    width: 32px;
+    height: 32px;
+    top: 6px;
+    right: 6px;
+    font-size: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    /* モバイルはホバー拡大なしで誤タップ防止 */
+    transition: background .2s ease, opacity .2s ease;
+  }
+  .delete-btn:hover {
+    transform: scale(1.04);
+  }
+  .delete-btn svg {
+    width: 18px;
+    height: 18px;
+  }
 }
 </style>
